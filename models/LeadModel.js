@@ -17,7 +17,9 @@ const EnquirySchema = new mongoose.Schema({
     trim: true,
   },
   status: { type: String, default: "New" },
-  date: { type: Date, default: Date.now }
-});
+  date: { type: Date, default: Date.now },
+},
+   { timestamps: true }
+);
 
 export default mongoose.model("Enquiry", EnquirySchema);

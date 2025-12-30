@@ -3,8 +3,12 @@ import Enquiry from "../models/LeadModel.js";
 // Get all leads
 export const getLeads = async (req, res) => {
   try {
-    const Enquirys = await Enquiry.find().sort({ createdAt: 1 });
-    res.json(Enquirys);
+    // const Enquirys = await Enquiry.find().sort({ createdAt:  -1 });
+    // const enquiries = await Enquiry.find().sort({ createdAt: -1 });
+    const enquiries = await Enquiry.find().sort({ date: -1 });
+
+
+    res.json(enquiries);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
