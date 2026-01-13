@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//inquiry Scheme
 const InquirySchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true },
