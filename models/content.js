@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-//inquiry Scheme
+
+// Inquiry Schema
 const InquirySchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true },
@@ -7,6 +8,11 @@ const InquirySchema = new mongoose.Schema(
     email: { type: String, required: true },
     phone: { type: String },
     message: { type: String },
+    status: {
+      type: String,
+      enum: ["New", "Contacted", "Pending", "Closed"],
+      default: "New",
+    },
   },
   { timestamps: true }
 );

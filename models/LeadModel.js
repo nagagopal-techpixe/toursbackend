@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const EnquirySchema = new mongoose.Schema({
   name: String,
   email: String,
- pax: String,
+  pax: String,
   days: String,
   message: String,
   phone: {
@@ -16,7 +16,12 @@ const EnquirySchema = new mongoose.Schema({
     type: Number,
     trim: true,
   },
-  status: { type: String, default: "New" },
+  status: {
+  type: String,
+  enum: ["New", "Contacted", "Pending", "Closed"],
+  default: "New",
+},
+
   date: { type: Date, default: Date.now },
 },
    { timestamps: true }

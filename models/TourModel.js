@@ -10,9 +10,8 @@ const TourSchema = new mongoose.Schema(
   {
     title: String,
     duration: String,
-  price: {
-  type: String,
-  set: v => `$${v}` // prepends "$" to whatever value comes in
+price: {
+  type: String  //  Just store plain number as string, no setter
 },
     region: String,
     theme: String,
